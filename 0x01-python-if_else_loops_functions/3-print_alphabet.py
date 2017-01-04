@@ -1,3 +1,4 @@
 #!/usr/bin/python3
-for i in range(1):
-    print("{}".format("abcdfghijklmnoprstuvwxyz"), end="")
+for i in range(ord('a'), ord('z')):
+    if (i != ord('q') and i != ord('e')):
+        print("{}".format(chr(i)), end="")
