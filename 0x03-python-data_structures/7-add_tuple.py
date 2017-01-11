@@ -8,6 +8,6 @@ def add_tuple(tuple_a=(), tuple_b=()):
     if len(tup_b) < 2:
         for i in range(len(tup_b), 2):
             tup_b.appent(0)
-    temp_tup = ([tup_a[0] + tup_b[0], tup_a[1] + tup_b[1]])
+    temp_tup = [tup_a[0] + tup_b[0], tup_a[1] + tup_b[1]]
     new_tup = tuple(temp_tup)
     return new_tup
