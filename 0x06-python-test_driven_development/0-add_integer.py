@@ -1,12 +1,16 @@
 #!/usr/bin/python3
 """
-This function accepts only integers or floats AND
-only 2 variables! It returns the sum of both variables as
-an INT.
+Function accepts only integers or floats AND
+only 2 variables! It retuns the sum of both variables
+after floats have  been casted into INT
 """
 def add_integer(a, b):
-    if (isinstance(a, int) is False) and (isinstance(a, float) is False):
+    if isinstance(a, float):
+        a = int(a)
+    if isinstance(b, float):
+        b = int(b)
+    if not (isinstance(a, int) or isinstance(a, float)):
         raise TypeError("a must be an integer")
-    if (isinstance(b, int) is False) and (isinstance(b, float) is False):
+    if not (isinstance(b, int) or isinstance(b, float)):
         raise TypeError("b must be an integer")
-    return int(a + b)
+    return (a + b)
