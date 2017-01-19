@@ -1,0 +1,143 @@
+The "1-mul" module
+==================
+
+The test file for "1-mul"
+
+The function returns the product of 2 Python variable
+-------------------
+
+>>> mul = __import__("1-mul").mul
+
+Accepted Cases:
+
+>>> mul(2, 4)
+8
+>>> mul(-3, 4)
+-12
+>>> mul(4, -8)
+-32
+>>> mul(-4, -3)
+12
+>>> mul(3.01, 5.05)
+15.200499999999998
+>>> mul(-2.01, 4.01)
+-8.060099999999998
+>>> mul(4.75, -8.99)
+-42.7025
+>>> mul(-10.99, -1.34)
+14.726600000000001
+>>> mul(10 - 1, 2)
+18
+>>> mul(3, 6 - 2)
+12
+>>> mul(float("inf"), 1)
+inf
+>>> mul(1, float("inf"))
+inf
+>>> mul(-float("inf"), 1)
+-inf
+>>> mul(1, -float("inf"))
+-inf
+>>> mul(float("inf"), -float("inf"))
+-inf
+>>> mul(-float("inf"), -float("inf"))
+inf
+>>> mul(True, 2)
+2
+>>> mul(2, True)
+2
+>>> mul(True, True)
+1
+>>> mul(False, 2)
+0
+>>> mul(2, False)
+0
+>>> mul(False, False)
+0
+>>> mul(True, False)
+0
+>>> mul(False, True)
+0
+>>> mul(2, 'c')
+'cc'
+>>> mul('c', 4)
+'cccc'
+>>> mul("string", 2)
+'stringstring'
+>>> mul(1, "string")
+'string'
+>>> mul("""world""", 3)
+'worldworldworld'
+>>> mul(2, """world""")
+'worldworld'
+>>> mul([1, 2, 3], 2)
+[1, 2, 3, 1, 2, 3]
+>>> mul(2, [1, 2, 3])
+[1, 2, 3, 1, 2, 3]
+
+Unacceptable Cases:
+
+>>> mul((1, 2, 3), (1, 2))
+Traceback (most recent call last):
+...
+TypeError: can't multiply sequence by non-int of type 'tuple'
+>>> mul([1, 3, 5], [2, 4, 6])
+Traceback (most recent call last):
+...
+TypeError: can't multiply sequence by non-int of type 'list'
+>>> mul(2, {})
+Traceback (most recent call last):
+...
+TypeError: unsupported operand type(s) for *: 'int' and 'dict'
+>>> mul({}, {})
+Traceback (most recent call last):
+...
+TypeError: unsupported operand type(s) for *: 'dict' and 'dict'
+>>> mul(2, lambda x: x)
+Traceback (most recent call last):
+...
+TypeError: unsupported operand type(s) for *: 'int' and 'function'
+>>> mul(2, None)
+Traceback (most recent call last):
+...
+TypeError: unsupported operand type(s) for *: 'int' and 'NoneType'
+>>> mul(None, 2)
+Traceback (most recent call last):
+...
+TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
+>>> mul("something", 4.5)
+Traceback (most recent call last):
+...
+TypeError: can't multiply sequence by non-int of type 'float'
+>>> mul("something", "new")
+Traceback (most recent call last):
+...
+TypeError: can't multiply sequence by non-int of type 'str'
+>>> mul(4.5, None)
+Traceback (most recent call last):
+...
+TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
+>>> mul(None, 4.5)
+Traceback (most recent call last):
+...
+TypeError: unsupported operand type(s) for *: 'NoneType' and 'float'
+>>> mul(None, None)
+Traceback (most recent call last):
+...
+TypeError: unsupported operand type(s) for *: 'NoneType' and 'NoneType'
+>>> mul()
+Traceback (most recent call last):
+...
+TypeError: mul() missing 2 required positional arguments: 'a' and 'b'
+>>> mul(1, )
+Traceback (most recent call last):
+...
+TypeError: mul() missing 1 required positional argument: 'b'
+>>> mul(, 1)
+Traceback (most recent call last):
+...
+SyntaxError: invalid syntax
+>>> mul(2, 3, 4)
+Traceback (most recent call last):
+...
+TypeError: mul() takes 2 positional arguments but 3 were given
