@@ -1,10 +1,16 @@
 #!/usr/bin/python3
 """
-Function accepts only integers or floats AND
-only 2 variables! It retuns the sum of both variables
-after floats have  been casted into INT
+This is the "Add Integer" module.
+
+The Addition module supplies a simple function, add_integer().
+It adds 2 variable of either int or float type and returns an int.
 """
+
+
 def add_integer(a, b):
+    """ Return the sum of 2 arguments after casting both into int.
+    Or raise TypeError for either argument type.
+    """
     if isinstance(a, float):
         a = int(a)
     if isinstance(b, float):
