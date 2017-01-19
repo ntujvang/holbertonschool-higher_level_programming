@@ -1,0 +1,87 @@
+The "Print Square" module
+========================
+
+The tset file for "4-print_square"
+
+The function returns a "#" square of the variable taken
+-----------------------
+
+>>> print = __import__("4-print_square").print_square
+
+Acceptable Cases:
+
+>>> print(2)
+##
+##
+>>> print(0)
+
+>>> print(3.3)
+###
+###
+###
+>>> print(2 + 2)
+####
+####
+####
+####
+>>> print(2 * 2)
+####
+####
+####
+####
+>>> print(2 / 2)
+#
+>>> print(2 ** 2)
+####
+####
+####
+####
+>>> print(2 - 2)
+
+>>> print(2 + True)
+###
+###
+###
+>>> print(2 - False)
+##
+##
+>>> print(2 * True)
+##
+##
+>>> print(2 / True)
+##
+##
+>>> print(2 ** True)
+##
+##
+
+Unacceptable Cases:
+
+>>> print("hi")
+Traceback (most recent call last):
+...
+TypeError: unorderable types: str() < int()
+>>> print(True)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+>>> print(False)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+>>> print(3, 4)
+Traceback (most recent call last):
+...
+TypeError: print_square() takes 1 positional argument but 2 were given
+>>> print(lambda x: x)
+Traceback (most recent call last):
+...
+TypeError: unorderable types: function() < int()
+>>> print({2})
+Traceback (most recent call last):
+...
+TypeError: unorderable types: set() < int()
+>>> print([2])
+Traceback (most recent call last):
+...
+TypeError: unorderable types: list() < int()
