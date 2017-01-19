@@ -1,0 +1,69 @@
+The "Say My Name" module
+========================
+
+Test file for "3-say_my_name"
+
+The function returns a string that includes the first/last variable
+-----------------------
+
+>>> say = __import__("3-say_my_name").say_my_name
+
+Acceptable Cases:
+
+>>> say("John", "Smith")
+My name is John Smith
+>>> say("Bob")
+My name is Bob 
+>>> say("")
+My name is  
+>>> say("yvan", "eht noij")
+My name is yvan eht noij
+>>> say('a', 'b')
+My name is a b
+>>> say("John", 's')
+My name is John s
+>>> say('S', "John")
+My name is S John
+
+Unacceptable Cases:
+
+>>> say()
+Traceback (most recent call last):
+...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+>>> say(1)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+>>> say(2, "Cher")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+>>> say("Cher", Cher)
+Traceback (most recent call last):
+...
+NameError: name 'Cher' is not defined
+>>> say(["HELLO", "world"], 3)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+>>> say("Bobby", [])
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+>>> say({}, {})
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+>>> say({}, "Bobby")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+>>> say("Bobby", {})
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+>>> say("Bobby", "John", "Smith")
+Traceback (most recent call last):
+...
+TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
