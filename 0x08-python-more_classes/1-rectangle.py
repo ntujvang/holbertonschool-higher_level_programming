@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 class Rectangle:
     def __init__(self, width=0, height=0):
-        self.__width = int(width)
-        self.__height = int(height)
+        self.width = int(width)
+        self.height = int(height)
 
     """ this set or prop/setter is for width
     """
