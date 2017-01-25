@@ -16,7 +16,8 @@ class Rectangle:
             raise TypeError("width must be an integer")
         elif value < 0:
             raise ValueError("width must be >=0")
-        self.__width = int(value)
+        else:
+            self.__width = int(value)
 
     """ this set of prop/setter is for height
     """
@@ -30,4 +31,5 @@ class Rectangle:
             raise TypeError("height must be an integer")
         elif value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = int(value)
+        else:
+            self.__height = int(value)
