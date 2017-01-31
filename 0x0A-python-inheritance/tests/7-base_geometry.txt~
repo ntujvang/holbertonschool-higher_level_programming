@@ -1,0 +1,50 @@
+The ''7-base_geometry'' module
+==============================
+
+This is a test file in reStructuredText fromat to test the above module.
+
+Using ''BaseGeometry''
+---------------------
+
+First import ''BaseGeometry'' from ''7-base_geometry'' module:
+
+      >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Acceptable Inputs:
+
+	   >>> bg = BaseGeometry()
+	   >>> type(bg)
+	   <class '7-base_geometry.BaseGeometry'>
+
+	   >>> 'area' in dir(BaseGeometry)
+	   True
+
+	   >>> 'integer_validator' in dir(BaseGeometry)
+	   True
+
+	   >>> a = BaseGeomery()
+	   >>> a.integer_validator("my_int", 20)
+
+
+Unacceptable Inputs:
+
+	   >>> a = BaseGeometry()
+	   >>> a.area()
+	   Traceback (most recent call last):
+	   ...
+	   Exception: area() is not implemented
+
+	   >>> a.integer_validator("hi", "Sam")
+	   Traceback (most recent call last):
+	   ...
+	   TypeError: hi must be an integer
+
+	   >>> a.integer_validator("hi" 0)
+	   Traceback (most recent call last):
+	   ...
+	   ValueError: hi must be greater than 0
+
+	   >>> a.integer_validator("hi", -10)
+	   Traceback (most recent call last):
+	   ...
+	   ValueError: hi must be greather than 0

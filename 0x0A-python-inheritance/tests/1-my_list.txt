@@ -1,0 +1,44 @@
+The ''1-my_list'' module
+========================
+
+This is a text file in reStructuredText format to test the above module
+
+Using ''Mylist''
+----------------
+
+First import ''MyList'' from ''1-my_list'' module:
+
+      >>> MyList = __import__('1-my_list').MyList
+
+Acceptable Inputs:
+
+	   >>> list = MyList()
+	   >>> type(list)
+	   <class '1-my_list.MyList'>
+
+	   >>> print(list)
+	   []
+
+	   >>> list.append(12)
+	   >>> list.append("c")
+	   >>> list.append('d')
+	   >>> print(list)
+	   [12, 'c', 'd']
+
+	   >>> list = [1, 7, 4, 5, 6]
+	   >>> list2 = list
+	   >>> print(list2)
+	   [1, 7, 4, 5, 6]
+
+	   >>> list3 = [-10, -20, -5, 10]
+	   >>> print(list3)
+	   [-10, -20, -5, 10]
+
+	   >>> list3.sort()
+
+Unacceptable Inputs:
+
+	   >>> list.print_sorted()
+	   Traceback (most recent call last):
+	   ...
+	   AttributeError: 'list' object has no attribute 'print_sorted'

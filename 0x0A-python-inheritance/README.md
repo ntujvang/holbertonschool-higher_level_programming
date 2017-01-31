@@ -1,0 +1,1 @@
+Python project on inheritance. Creating classes with sub classes!
