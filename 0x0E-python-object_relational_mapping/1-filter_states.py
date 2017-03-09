@@ -3,10 +3,11 @@
 Script uses MySQLdb to access database argv[3] and prints out anything
 starting with "N"
 '''
-if __name__ == "__main__":
-    import sys
-    import MySQLdb
+import sys
+import MySQLdb
 
+
+if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost",
                          user=sys.argv[1],
                          password=sys.argv[2],
